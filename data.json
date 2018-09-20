@@ -1,0 +1,26 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {
+    "name": "Education"
+  },
+  "nodes": [
+    {
+      "type": "Intent",
+      "name": "First",
+      "id": 1
+    },
+    {
+      "type": "Intent",
+      "name": "Blackout_Date",
+      "id": "Blackout_Date"
+    }
+  ],
+  "links": [
+    {
+      "value": "ABC",
+      "source": 1,
+      "target": "Blackout_Date"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+
+
+service: DiGraph
+
+provider:
+  name: aws
+  runtime: python3.6
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - lambda:InvokeFunction
+        - lambda:InvokeAsync
+      Resource: "arn:aws:lambda:us-east-1:*:*"
+
+functions:
+
+  DigraphTest:
+    name: DigraphTest
+    handler: DigraphTest.lambda_handler
+
+package:
+  exclude:
+    - networkx*.*
+    - .venv/*
+    - requirements.txt
+    - __pycache__/** # for python 3.x
+
+plugins:
+  - serverless-python-requirements
+custom:
+  pythonRequirements:
+    dockerizePip: non-linux
+
